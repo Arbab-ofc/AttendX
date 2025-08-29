@@ -81,8 +81,8 @@ export const registerUser = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false, 
-      sameSite: "strict",
+      secure: true, 
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000, 
     });
 
@@ -125,8 +125,8 @@ export const loginUser = async (req, res) => {
     
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "strict",
+      secure: true, 
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -158,8 +158,8 @@ export const googleAuth = async (req, res) => {
         const token = generateToken(user);
             res.cookie("token", token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "strict",
+                secure: true, 
+                sameSite: "None",
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
             console.log("Google registration successful");
@@ -179,8 +179,8 @@ export const logoutUser = async (req, res) => {
   try {
     res.clearCookie("token", {
       httpOnly: true,
-      secure: false,
-      sameSite: "strict",
+      secure: true, 
+      sameSite: "None",
     });
 
     res.status(200).json({
@@ -196,6 +196,17 @@ export const getCurrentUser = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-otp -password");
     if (!user) return res.status(404).json({ message: "User not found" });
+
+    const token = generateToken(user);
+    if (!token) return res.status(500).json({ message: "Failed to generate token" });
+
+    
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true, 
+      sameSite: "None",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
 
     res.status(200).json({
       success: true,
@@ -248,8 +259,8 @@ export const verifyOtp = async (req, res) => {
     
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "strict",
+      secure: true, 
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -560,8 +571,8 @@ export const deleteAccount = async (req, res) => {
    
     res.clearCookie("token", {
       httpOnly: true,
-      secure: false,     
-      sameSite: "strict",
+      secure: true, 
+      sameSite: "None",
     });
 
     return res.status(200).json({
