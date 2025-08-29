@@ -35,7 +35,7 @@ const Login = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-  "http://localhost:3000/api/users/login",
+  "https://attendx-v8hq.onrender.com/api/users/login",
   {
     email,
     password,
@@ -66,7 +66,7 @@ const Login = () => {
       const user = result.user;
 
       await axios.post(
-        "http://localhost:3000/api/users/google-auth",
+        "https://attendx-v8hq.onrender.com/api/users/google-auth",
         {
           name: user.displayName,
           email: user.email,

@@ -19,7 +19,7 @@ const CreateCategory = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/attendance-category/create",
+        "https://attendx-v8hq.onrender.com/api/attendance-category/create",
         { title, description },
         { withCredentials: true }
       );

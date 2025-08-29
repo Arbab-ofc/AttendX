@@ -16,7 +16,7 @@ const ForgetPassword = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:3000/api/users/forget-password", { email });
+      const res = await axios.post("https://attendx-v8hq.onrender.com/api/users/forget-password", { email });
 
       if (res.data.success) {
         toast.success(res.data.message);

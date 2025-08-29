@@ -24,7 +24,7 @@ const Dashboard = () => {
   const logoutHandler = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/users/logout",
+        "https://attendx-v8hq.onrender.com/api/users/logout",
         {},
         { withCredentials: true }
       );

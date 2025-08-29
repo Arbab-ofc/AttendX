@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/users/current-user", {
+        const res = await axios.get("https://attendx-v8hq.onrender.com/api/users/current-user", {
           withCredentials: true,
         });
 

@@ -24,7 +24,7 @@ const AttendanceVotePage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [recordId, setRecordId] = useState(null);
 
-  // NEW: stats state
+  
   const [stats, setStats] = useState(null);
   const loadStats = async () => {
     try {
@@ -229,7 +229,7 @@ const AttendanceVotePage = () => {
           Created at: {new Date(category.createdAt).toDateString()}
         </p>
 
-        {/* NEW: Compact stats row */}
+        
         {stats && (
           <div className="mb-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
             <div className="bg-gray-800/70 rounded-lg px-3 py-2">
@@ -253,7 +253,7 @@ const AttendanceVotePage = () => {
           </div>
         )}
 
-        {/* Month Picker */}
+        
         <div className="mb-6">
           <input
             type="month"
@@ -268,7 +268,7 @@ const AttendanceVotePage = () => {
           />
         </div>
 
-        {/* Attendance Calendar */}
+        
         <div className="my-8 flex justify-center">
           {activityData.length > 0 && (
             <ActivityCalendar
@@ -303,7 +303,7 @@ const AttendanceVotePage = () => {
           )}
         </div>
 
-        {/* Status Toggle */}
+        
         <div className="mb-6">
           <ToggleGroup.Root
             type="single"
@@ -338,7 +338,7 @@ const AttendanceVotePage = () => {
           </ToggleGroup.Root>
         </div>
 
-        {/* Buttons + Mini Calendar */}
+        
         <div className="mt-6 flex flex-col items-center space-y-4">
           <DatePicker
             selected={selectedDate}

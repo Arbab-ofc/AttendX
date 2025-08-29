@@ -40,7 +40,7 @@ const RegistrationPage = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/api/users/register", {
+      const res = await axios.post("https://attendx-v8hq.onrender.com/api/users/register", {
         name,
         email,
         phone,
@@ -67,7 +67,7 @@ const RegistrationPage = () => {
       const user = result.user;
 
       await axios.post(
-        "http://localhost:3000/api/users/google-auth",
+        "https://attendx-v8hq.onrender.com/api/users/google-auth",
         {
           name: user.displayName,
           email: user.email,

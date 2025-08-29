@@ -24,7 +24,7 @@ const VerifyOtp = () => {
 
       
       const res = await axios.post(
-        "http://localhost:3000/api/users/verify-otp",
+        "https://attendx-v8hq.onrender.com/api/users/verify-otp",
         { email, otp },
         { withCredentials: true }
       );

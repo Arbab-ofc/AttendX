@@ -158,7 +158,7 @@ const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef(null);
 
-  const delay = 4000; // 4 seconds autoplay
+  const delay = 3000; 
 
   const resetTimeout = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -201,7 +201,7 @@ const TestimonialCarousel = () => {
         ))}
       </div>
 
-      {/* Indicators */}
+      
       <div className="flex justify-center mt-4 space-x-2">
         {testimonials.map((_, idx) => (
           <button

@@ -24,7 +24,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3000/api/contact-us", formData,);
+      const res = await axios.post("https://attendx-v8hq.onrender.com/api/contact-us", formData,);
 
       if (res.data.success) {
         toast.success("Message sent successfully!", {
