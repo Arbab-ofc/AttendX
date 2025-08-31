@@ -108,7 +108,7 @@ const AttendanceVotePage = () => {
 
     try {
       const res = await axiosInstance.post(
-        `/attendance-record/mark/${categoryId}`,
+        `attendance-record/mark/${categoryId}`,
         {
           date: selectedStr,
           status,
@@ -144,7 +144,7 @@ const AttendanceVotePage = () => {
     try {
       const formattedDate = date.toISOString().split("T")[0];
       const res = await axiosInstance.post(
-        `/attendance-record/date?date=${formattedDate}`,
+        `attendance-record/date?date=${formattedDate}`,
         { categoryId: categoryId }
       );
       if (res.data.success && res.data.data) {
@@ -167,13 +167,13 @@ const AttendanceVotePage = () => {
     }
     try {
       const res = await axiosInstance.put(
-        `/attendance-record/month/${categoryId}/${recordId}`,
+        `attendance-record/month/${categoryId}/${recordId}`,
         { status }
       );
       if (res.data.success) {
         toast.success("Attendance updated ✅");
         fetchAttendance();
-        loadStats(); // NEW
+        loadStats(); 
         fetchRecordId(selectedDate);
       } else {
         toast.error(res.data.message || "Update failed ❌");
@@ -191,14 +191,14 @@ const AttendanceVotePage = () => {
     }
     try {
       const res = await axiosInstance.delete(
-        `/attendance-record/${categoryId}/${recordId}`
+        `attendance-record/${categoryId}/${recordId}`
       );
       if (res.data.success) {
         toast.success("Attendance deleted ✅");
         setRecordId(null);
         setStatus(null);
         fetchAttendance();
-        loadStats(); // NEW
+        loadStats(); 
       } else {
         toast.error(res.data.message || "Delete failed ❌");
       }

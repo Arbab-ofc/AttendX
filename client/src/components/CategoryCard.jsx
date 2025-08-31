@@ -12,7 +12,7 @@ const CategoryCard = ({ category }) => {
     if (!window.confirm("Are you sure you want to delete this category?")) return;
 
     try {
-      const res = await axiosInstance.delete(`/attendance-category/${category._id}`);
+      const res = await axiosInstance.delete(`attendance-category/${category._id}`);
       if (res.data.success) {
         toast.success("Category deleted successfully ✅");
         setTimeout(() => window.location.reload(), 800);
