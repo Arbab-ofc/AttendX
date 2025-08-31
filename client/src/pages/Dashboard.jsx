@@ -48,7 +48,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const userRes = await axiosInstance.get("/users/current-user");
+      const userRes = await axiosInstance.get("users/current-user");
       setUser(userRes.data.user);
 
       const categoryRes = await axiosInstance.get("attendance-category/all");
