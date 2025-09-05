@@ -39,9 +39,9 @@
 
 ## 🌐 Links
 
-- 🔗 **Live Demo:** [AttendX Live](https://your-deploy-url.com)
-- 💻 **Repo:** [GitHub Repo](https://github.com/your-username/attendx)
-- 📬 **Contact:** support@attendx.com
+- 🔗 **Live Demo:** [AttendX Live](https://attend-x-beige.vercel.app/)
+- 💻 **Repo:** [GitHub Repo](https://github.com/Arbab-ofc/AttendX)
+- 📬 **Contact:** arbabprvt22@gmail.com
 
 ---
 
